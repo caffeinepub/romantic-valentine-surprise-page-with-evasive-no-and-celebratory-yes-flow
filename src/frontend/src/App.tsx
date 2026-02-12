@@ -102,7 +102,7 @@ export default function App() {
                 </h2>
                 <div className="prose prose-rose dark:prose-invert max-w-none space-y-4 text-base md:text-lg leading-relaxed text-rose-900 dark:text-rose-100">
                   <p>
-                    My love, every day with you feels like a gift I don't deserve but am endlessly grateful for. You are my safe place, my biggest blessing, and the reason ordinary moments feel magical. Loving you has taught me patience, joy, and what it truly means to feel at home in another person's heart.
+                    I'll forever love you, you are my life and I would like to say: My love, every day with you feels like a gift I was waiting for and am endlessly grateful for. You are my safe place, my biggest blessing, and the reason ordinary moments feel magical. Loving you has taught me patience, joy, and what it truly means to feel at home in you with u.
                   </p>
                   <p>
                     On this Valentine's Day—and every day—I choose you, I cherish you, and I thank the universe for making you my wife. I love you more deeply than words can ever fully say.
@@ -111,21 +111,50 @@ export default function App() {
                     When I first saw you, something changed. I seen what true happiness looks like. I also saw my future. And now, every time I look at you, I see my world, my everything, my past present and future. I see everything I want. You are my everything. You are my world.
                   </p>
                   <p>
-                    You are constantly in my mind. You know how to brighten up my day just by saying hi. You are the most amazing girlfriend I could ever want. You've truly made me happier than I thought I could be. I am so in love with you. And the best part is, I fall in love with you more and more every day and with every word you say.
+                    You are constantly in my mind. You know how to brighten up my day just by saying meri jaan. You are the most amazing begum warda and only mine I could ever want you are my type. You've truly made me happier than I thought I could be. I am so in love with you. And the best part is, I fall in love with you more and more every day and with every word you say.
                   </p>
                   <p>
-                    You've helped me do things I never thought I could do. You've helped me be happy. You've helped pick me up. You've helped cheer me up. You've helped show me what love really is. You've helped with so much more too. I could be here for the next week saying everything you've done and helped me. I love you so much. So much more than I could ever explain. So much more than you will ever know.
+                    You've helped me do things I never thought I could do. You've helped me be happy. You've helped pick me up. You've helped cheer me up. You've helped show me what love really is. You've helped with so much more too. I love you so much. So much more than I could ever explain. So much more than you will ever know.
                   </p>
                   <p>
-                    You actually mean so much to me. I wouldn't trade you for anything. And the fact that we've been together for one year, one FREAKIN month, is actually crazy. I can't wait to spend the rest of my life with you. I know that waking up to you, rolling over, and giving you a kiss every morning will be truly absolutely amazing.
+                    Actually mean so much to me. I dont want to lose you meri jaan I can't wait to spend the rest of my life with you. I know that waking up to you, rolling over, and giving you a kiss every morning or matlab pura din puri raat.
                   </p>
                   <p>
-                    Thank you for everything you have done for me. I still remember that day last year when I said "Will you be my Valentine?" and you said "I need time." And see now, today we are a couple—the best couple, the perfect couple. And today we are husband and wife. So cool, right?
+                    Thank you for everything you have done for yk mujhe aaj bhi woh din yaad hai jab last year i said you will you be my valentine and you said i need time and see noww aaj hum dono couple hain best couple perfect couple or aaj hum mia biwi hai so cool na jaan.
                   </p>
                   <p>
-                    Warda, you are my life, my everything. Without you, I have no one. I'll always be loyal to you—that's my promise to you and to Allah. I only want you, I only love you, and I am only yours. I will always be yours.
+                    Warda tum meri zindagi ho mera sab kuch tumara ilawa mera koi nahi ill always loyal with u thats my promis to u and allah jaan mein sirf tumaye chachta hon or sirf tumaye jaan or mein sirf tumara hon or ban kar rahonga or tha i love you so so much warda.
                   </p>
                   <p className="text-center font-semibold text-xl text-rose-600 dark:text-rose-400 mt-8">
+                    And in the end i have somthing for u meri jaan
+                  </p>
+                  <div className="bg-rose-50 dark:bg-rose-900/20 rounded-2xl p-6 mt-6 border-2 border-rose-200 dark:border-rose-800">
+                    <p className="italic text-center leading-relaxed">
+                      Meri zindagi ki sab se haseen kahani ho tum<br />
+                      Mere har khwab ki meethi nishani ho tum<br />
+                      Jab se tum meri zindagi mein aayi ho<br />
+                      Har subah roshan har shaam suhani ho tum
+                    </p>
+                    <p className="italic text-center leading-relaxed mt-4">
+                      Tumari muskurahat meri power ban jati hai<br />
+                      Tumari awaaz mere dil ko sukoon de jati hai<br />
+                      Jab tum mere paas hoti ho<br />
+                      Duniya ki har khushi nazar aati hai
+                    </p>
+                    <p className="italic text-center leading-relaxed mt-4">
+                      Tum meri duaon ka haseen jawab ho<br />
+                      Mere dil ka sab se pyara khwab ho<br />
+                      Main har life tume hi chahoon<br />
+                      Tum meri mohabbat meri zindagi ka intekhab ho
+                    </p>
+                    <p className="italic text-center leading-relaxed mt-4">
+                      Mere har dard ka ilaj ho tum my personal doctor warda<br />
+                      Meri rooh ka sukkon ho tum<br />
+                      Agar mohabbat ka koi naam hota<br />
+                      Toh wo naam sirf tum ho sirf tum
+                    </p>
+                  </div>
+                  <p className="text-center font-bold text-2xl text-rose-600 dark:text-rose-400 mt-8">
                     I'll forever love you. You are my life. ❤️
                   </p>
                 </div>

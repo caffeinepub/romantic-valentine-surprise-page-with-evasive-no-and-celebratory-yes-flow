@@ -1,108 +1,92 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Valentine prompt with evasive No and Yes reveal (standalone + React)",
+  "title": "Static cartoonish Valentine proposal page with evasive No and Yes reveal",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Refine standalone valentine.html into a single-purpose iPad-friendly Valentine prompt with exactly two choices (Yes/No) and English-only copy.",
+      "summary": "Render a single-purpose Valentine prompt with the exact question and exactly two options (Yes/No).",
       "acceptanceCriteria": [
-        "Opening /public/valentine.html shows a single Valentine question with only two buttons: Yes and No.",
-        "Layout is readable and usable on tablet-sized screens (iPad) without horizontal scrolling.",
-        "All user-visible copy in this page is in English."
+        "The initial view shows the question “Will you be my Valentine, my love?”",
+        "Only two buttons are presented: “Yes” and “No”",
+        "The app remains focused on this single interaction (no extra navigation/features added)"
       ],
       "file_operations": [
         {
           "path": "frontend/public/valentine.html",
           "operation": "modify",
-          "description": "Tighten the standalone prompt UI to be single-purpose for iPad Chrome (ensure the question + exactly two buttons are the only interaction); remove/avoid any extra non-essential UI elements that distract from the prompt/reveal while keeping all visible copy in English."
+          "description": "Ensure the initial prompt view is the default render, shows the exact question text, and presents only the two buttons (Yes/No). Remove/avoid any extra UI elements that could be perceived as additional features (e.g., non-essential external links) while preserving the romantic theme."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Ensure the standalone No button evasively moves on hover/touch and cannot be reliably clicked, while staying in-bounds and not overlapping Yes.",
+      "summary": "Make the “No” button evade hover and touch/pointer attempts by moving randomly within bounds without overlapping “Yes”.",
       "acceptanceCriteria": [
-        "On desktop: moving the cursor over the No button causes it to jump to a different position.",
-        "On touch devices (iPad): attempting to press the No button causes it to move away (preventing a click).",
-        "No button stays within the visible bounds of its button area and does not overlap the Yes button.",
-        "The No button cannot be reliably clicked through normal interaction."
+        "On desktop: moving the cursor onto the “No” button causes it to relocate before it can be clicked",
+        "On touch devices (iPad Chrome): attempting to tap/press “No” causes it to relocate and prevents the tap from activating a click",
+        "The “No” button always stays within the visible bounds of its intended container",
+        "The “No” button never overlaps the “Yes” button after moving"
       ],
       "file_operations": [
         {
           "path": "frontend/public/valentine.html",
           "operation": "modify",
-          "description": "Harden the evasive No behavior for both mouse and touch: add pointer/touch handling that prevents activation, keeps the button within the buttons container bounds, and retries random placement to avoid overlapping the Yes button."
+          "description": "Update the No-button interaction to be pointer/touch compatible: move the No button on mouse hover AND on pointer/touch press attempts (e.g., pointerenter + pointerdown/touchstart), calling preventDefault/stopPropagation to prevent click activation. Constrain random positions to the buttons container bounds and compute a non-overlapping placement relative to the Yes button (retry up to a capped attempt count)."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "On Yes click, show the meme image and the full love letter in a scrollable, iPad-readable reveal view in both valentine.html and App.tsx.",
+      "summary": "On Yes click, switch to a celebration view with the specified meme image and a scroll-friendly love letter layout for iPad Chrome.",
       "acceptanceCriteria": [
-        "Clicking Yes hides the question view and shows the reveal view.",
-        "Reveal view includes the meme image and the full love letter text (as paragraph blocks) and is readable on iPad (comfortable font size/line height).",
-        "Reveal view content is vertically scrollable so long text is accessible.",
-        "The same end-user behavior exists in the React app (frontend/src/App.tsx) and the standalone page (frontend/public/valentine.html)."
+        "Clicking “Yes” hides the prompt view and shows a celebration/reveal view",
+        "The reveal view contains a meme image with the embedded text “You are my forever, Warda” (case/punctuation as shown)",
+        "The reveal view renders the full provided message text and is readable on iPad (mobile typography and spacing)",
+        "The love letter area is scrollable if it exceeds the viewport height"
       ],
       "file_operations": [
         {
           "path": "frontend/public/valentine.html",
           "operation": "modify",
-          "description": "Update the Yes-click reveal to show (1) the meme image and (2) the complete user-provided love letter content as readable paragraph blocks within a vertically scrollable layout suitable for iPad Chrome."
+          "description": "Wire the Yes button to hide the prompt view and reveal the celebration view. Ensure the celebration view loads the meme image from frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png and the love letter is displayed with readable mobile-first typography and a scrollable container when content exceeds the viewport."
         },
         {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Align the React Yes-click reveal view with the standalone behavior: display the meme image and full love letter paragraphs in a scrollable layout. Use the shadcn-ui ScrollArea component for vertical scrolling and the shadcn-ui Button component for consistent CTA styling. Verify the component's usage instructions before implementing."
+          "path": "frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the required generated meme image asset so the standalone page can load it statically from frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Apply a consistent cartoonish romantic theme across the standalone page and React flow (warm palette, rounded shapes, heart accents, soft shadows, friendly typography) without adding extra features.",
+      "summary": "Apply a cohesive cartoonish romantic theme across prompt and reveal views while keeping the UI uncluttered and iPad-friendly.",
       "acceptanceCriteria": [
-        "Both flows (standalone HTML page and React app) share a coherent cartoonish-romantic styling approach (colors, rounded shapes, heart accents, soft shadows).",
-        "Theme does not introduce extra features beyond the Valentine prompt and the reveal view.",
-        "Typography and spacing remain readable on mobile/tablet."
+        "Prompt and reveal views share a cohesive cartoonish romantic aesthetic (rounded cards/buttons, heart motifs, soft shadows)",
+        "The design remains uncluttered and centered around the Yes/No interaction and the reveal content",
+        "The UI remains responsive and comfortable to use on iPad screen sizes"
       ],
       "file_operations": [
         {
           "path": "frontend/public/valentine.html",
           "operation": "modify",
-          "description": "Adjust the standalone CSS to ensure a cohesive cartoonish-romantic theme (warm pink/red palette, rounded shapes, heart accents, soft shadows, friendly typography) and maintain iPad readability without introducing new flows."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Refine Tailwind class usage so the React prompt + reveal matches the same cartoonish-romantic styling approach as the standalone page while remaining focused on the question and reveal. Continue using shadcn-ui Button and ScrollArea where already present. Verify the component's usage instructions before implementing."
+          "description": "Unify styling across both views with a warm pink/red palette, rounded playful shapes, heart accents, and soft shadows. Ensure responsive sizing (especially button tap targets and typography) for iPad Chrome while keeping layout centered and minimal."
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Add the generated meme image to frontend/public/assets/generated and reference it from both valentine.html and App.tsx using the exact filename.",
+      "summary": "Deliver the feature as a self-contained static page in frontend/public/valentine.html and reference the meme image as a static generated asset.",
       "acceptanceCriteria": [
-        "The file frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png exists and is loadable in the browser.",
-        "frontend/public/valentine.html references the image via a relative path that works when opening the file via the app’s static hosting.",
-        "frontend/src/App.tsx references the image at /assets/generated/valentine-meme-forever-warda.dim_1600x900.png.",
-        "No backend endpoints are added for image delivery."
+        "The standalone page frontend/public/valentine.html runs without a backend and contains all required HTML/CSS/JS for the interaction",
+        "The standalone page functions correctly when opened/served statically in Chrome on iPad",
+        "The meme image is loaded from frontend/public/assets/generated using the exact filename specified in this build request (no backend image serving)"
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png",
-          "operation": "create",
-          "description": "Add the static generated image asset at the exact path/filename so it can be served by static hosting (no backend involvement)."
-        },
-        {
           "path": "frontend/public/valentine.html",
           "operation": "modify",
-          "description": "Ensure the standalone reveal view references the image using a relative static path that resolves under the app’s static hosting: frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Ensure the React reveal view references the image at /assets/generated/valentine-meme-forever-warda.dim_1600x900.png and that it renders correctly within the reveal layout."
+          "description": "Ensure valentine.html remains fully standalone (all required HTML/CSS/JS embedded or local) with no backend dependencies, and that the meme image reference resolves to frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png when served/opened statically (iPad Chrome compatible)."
         }
       ]
     }

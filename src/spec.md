@@ -1,13 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Create a simple, cartoonish romantic Valentine prompt with “Yes/No” (with an evasive “No”) and a “Yes” reveal showing a meme image and a love letter, optimized for iPad Chrome.
+**Goal:** Create a simple, single-purpose Valentine proposal page that asks “Will you be my Valentine, my love?” with two options (“Yes” and an evasive “No”), and reveals a romantic meme + love letter when “Yes” is clicked.
 
 **Planned changes:**
-- Update `frontend/public/valentine.html` to show the single question “Will you be my Valentine, my love?” with exactly two buttons: “Yes” and “No”, using English-only copy and an iPad-friendly layout.
-- Implement evasive “No” behavior in `frontend/public/valentine.html`: on hover/touch, move the “No” button to a random position within bounds without overlapping the “Yes” button, making it hard to click.
-- On “Yes” click, show a reveal/celebration view in both `frontend/public/valentine.html` and `frontend/src/App.tsx` that includes the meme image (“You are my forever, Warda.”) and the full love letter content formatted as readable, scrollable paragraphs.
-- Apply a consistent cartoonish romantic theme across both flows (warm pink/red palette, rounded shapes, heart accents, soft shadows, friendly typography) while keeping the UI single-purpose.
-- Add and reference the static meme image at `frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png` from both the standalone page and the React app.
+- Update/maintain `frontend/public/valentine.html` as a self-contained static HTML/CSS/JS page runnable in iPad Chrome.
+- Implement the initial prompt view with the question text and exactly two buttons: “Yes” and “No”.
+- Implement evasive “No” behavior for both mouse hover and touch/pointer attempts: relocate to a random in-bounds position without overlapping the “Yes” button and without allowing the “No” click to activate.
+- Implement the “Yes” click reveal view that displays the specified meme image (“You are my forever, Warda”) and the provided love letter text in a readable, scroll-friendly layout.
+- Apply a cohesive cartoonish romantic theme across both views (warm pink/red palette, rounded shapes, heart accents, soft shadows, friendly typography).
 
-**User-visible outcome:** On iPad Chrome, the user sees a romantic Valentine question with “Yes” and an evasive “No”; tapping “Yes” reveals a themed celebration view with a meme image and a scrollable love letter.
+**User-visible outcome:** Opening `valentine.html` on iPad Chrome shows the Valentine question with “Yes” and an unclickable evasive “No”; tapping “Yes” shows a romantic meme image and the full love letter in a readable, scrollable layout.

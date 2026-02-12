@@ -1,20 +1,51 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Interactive romantic Valentine proposal web page (HTML/CSS/JS) for iPad Chrome: asks girlfriend to be Valentine with Yes/No buttons, evasive No hover behavior, and a Yes-click reveal with meme image and long personalized love message in a cartoonish romantic theme.",
+  "summary": "Interactive romantic single-page Valentine proposal web page (HTML/CSS/JS) with Yes/No choice, evasive No button, and a Yes-triggered cartoonish meme image + love message; designed to run locally on iPad Chrome.",
   "architectural_notes": [
-    "Single static HTML page with embedded CSS/JS (no backend) to run locally on iPad Chrome.",
-    "Use client-side DOM events (hover/mousemove/touch) to reposition the 'No' button within viewport bounds.",
-    "Include an image asset (local file or URL) for the meme shown after clicking 'Yes'.",
-    "Ensure mobile/iPad compatibility (responsive layout; handle touch interactions)."
+    "Implement as a single self-contained static HTML page with embedded CSS/JS (no backend) for easy local use on iPad Chrome."
   ],
-  "known_issues": [],
+  "known_issues": [
+    "Production deployment error occurred during deployment (\"Deployment error\" while going live with draft Version 8)."
+  ],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Meme-style cartoon romantic illustration with a couple, hearts/sparkles, warm pink/red palette, playful vector-like outlines, and embedded text “You are my forever, Warda.” (valentine-meme-forever-warda.dim_1600x900.png)",
+  "imageRequirements": "## Required Images\n- Meme-style cartoon romantic illustration with a couple, hearts/sparkles, warm pink/red palette, playful vector-like outlines, and embedded text “You are my forever, Warda.” (valentine-meme-forever-warda.dim_1600x900.png, 1600x900)",
   "existing_features": [
     {
-      "id": "feature-add-the-meme-style-image-as-a-static-asset-under-frontend-public-assets-generated-and-reference-it-from-both-frontend-public-valentine-html-and-frontend-src-app-tsx-using-the-exact-filename-valentine-meme-forever-warda-dim-1600x900-png-do-not-serve-images-through-the-backend",
-      "title": "Add the meme-style image as a static asset under frontend/public/assets/generated and reference it from both frontend/public/valentine.html and frontend/src/App.tsx using the exact filename valentine-meme-forever-warda.dim_1600x900.png (do not serve images through the backend).",
+      "id": "feature-deliver-a-simple-single-purpose-valentine-proposal-experience-that-asks-the-user-will-you-be-my-valentine-my-love-and-presents-exactly-two-options-yes-and-no",
+      "title": "Deliver a simple, single-purpose Valentine proposal experience that asks the user: “Will you be my Valentine, my love?” and presents exactly two options: “Yes” and “No”.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-evasive-no-interaction-so-that-the-no-button-cannot-be-clicked-when-the-user-hovers-over-it-with-a-mouse-or-attempts-to-touch-press-it-via-touch-pointer-on-ipad-the-button-moves-to-a-new-random-position-within-its-container-bounds-and-does-not-overlap-the-yes-button",
+      "title": "Implement the evasive “No” interaction so that the “No” button cannot be clicked: when the user hovers over it with a mouse OR attempts to touch/press it via touch/pointer on iPad, the button moves to a new random position within its container bounds and does not overlap the “Yes” button.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-clicking-yes-switch-to-a-celebration-reveal-view-that-a-displays-a-cartoonish-romantic-meme-image-containing-the-text-you-are-my-forever-warda-and-b-shows-the-user-provided-love-letter-text-in-a-readable-scroll-friendly-layout-suitable-for-ipad-chrome",
+      "title": "On clicking “Yes”, switch to a celebration/reveal view that (a) displays a cartoonish romantic meme image containing the text “You are my forever, Warda” and (b) shows the user-provided love letter text in a readable, scroll-friendly layout suitable for iPad Chrome.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-cartoonish-romantic-visual-theme-across-both-the-prompt-and-celebration-views-warm-pink-red-palette-playful-rounded-shapes-heart-accents-soft-shadows-and-a-friendly-cartoon-like-typographic-feel-while-keeping-the-ui-simple-and-focused",
+      "title": "Apply a consistent cartoonish romantic visual theme across both the prompt and celebration views (warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel), while keeping the UI simple and focused.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-the-experience-as-a-self-contained-static-page-runnable-in-ipad-chrome-by-maintaining-updating-the-standalone-file-at-frontend-public-valentine-html-html-css-js-and-ensure-the-meme-image-is-referenced-as-a-static-asset-under-frontend-public-assets-generated",
+      "title": "Provide the experience as a self-contained static page runnable in iPad Chrome by maintaining/updating the standalone file at frontend/public/valentine.html (HTML/CSS/JS) and ensure the meme image is referenced as a static asset under frontend/public/assets/generated.",
       "reqIds": [
         "REQ-5"
       ],
@@ -24,57 +55,31 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Build a simple romantic-themed interactive Valentine proposal web page (HTML/CSS/JS) runnable on iPad Chrome",
+      "summary": "Create a simple romantic-themed interactive Valentine proposal webpage with Yes/No options",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-2",
-      "summary": "Add Yes/No options where hovering over 'No' moves it away to prevent clicking",
+      "summary": "Make the 'No' button evade the cursor on hover so it cannot be clicked",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-3",
-      "summary": "On 'Yes' click, display a meme image and show the personalized love message (cartoonish romantic styling)",
+      "summary": "On 'Yes' click, display a cartoonish romantic meme image and the provided long love message text",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-4",
-      "summary": "Update the standalone page at frontend/public/valentine.html to be a simple, romantic-themed, single-purpose Valentine prompt that asks “Will you be my Valentine, my love?” with exactly two options: “Yes” and “No”, optimized for iPad Chrome.",
-      "reqIds": [
-        "REQ-1"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Implement the evasive “No” behavior on the standalone page (frontend/public/valentine.html): when the user hovers over or touches the “No” button, it moves to a new random position within its container so it cannot be clicked, while ensuring it does not overlap the “Yes” button.",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-6",
-      "summary": "On “Yes” click, show a celebration/reveal view (in both frontend/public/valentine.html and frontend/src/App.tsx) that displays: (1) the meme-style image with embedded text “You are my forever, Warda.” and (2) the full love letter message content provided by the user, formatted as readable paragraphs in a scrollable layout suitable for iPad Chrome.",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-7",
-      "summary": "Apply a consistent cartoonish romantic visual theme across both the standalone page (frontend/public/valentine.html) and the React flow (frontend/src/App.tsx): warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel, while keeping the UI simple and focused on the single Valentine question and reveal.",
-      "reqIds": [
-        "REQ-4"
-      ],
+      "summary": "Deliver as a self-contained HTML/CSS/JavaScript page that runs easily in Chrome on an iPad",
+      "reqIds": [],
       "status": "pending"
     }
   ],
   "gameProjectType": "none",
-  "projectName": "Cartoonish romantic Valentine page with evasive “No” and “Yes” reveal (meme + love letter)",
+  "projectName": "Cartoonish romantic Valentine surprise page with evasive “No” and “Yes” reveal",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }
