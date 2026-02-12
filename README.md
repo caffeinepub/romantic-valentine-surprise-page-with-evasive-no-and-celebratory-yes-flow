@@ -1,2 +1,3 @@
-# romantic-valentine-surprise-page-with-evasive-no-and-celebratory-yes-flow
-Exported from Caffeine project: Cartoonish romantic Valentine page with evasive “No”, “Yes” reveal meme, and love letter
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

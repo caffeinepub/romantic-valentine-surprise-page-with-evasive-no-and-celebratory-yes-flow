@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Interactive romantic Valentine surprise single-page web app (HTML/CSS/JS) for iPad Chrome with Yes/No choice, evasive No button, and Yes reveals a meme image plus a long love message in a cartoonish romantic theme.",
+  "architectural_notes": [
+    "Implement as a single static HTML page with embedded CSS/JS for easy offline/Chrome-on-iPad use."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Meme-style cartoon romantic illustration with a couple, hearts/sparkles, warm pink/red palette, playful vector-like outlines, and the embedded text “You are my forever, Warda.” (valentine-meme-forever-warda.dim_1600x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-update-the-standalone-page-frontend-public-valentine-html-to-keep-the-single-purpose-valentine-prompt-with-yes-and-an-evasive-no-button-moves-away-on-hover-touch-and-on-yes-click-reveal-1-a-meme-style-cartoon-romantic-image-containing-the-text-you-are-my-forever-warda-and-2-the-full-love-letter-content-in-english-displayed-below-the-image-in-a-readable-scrollable-layout-suitable-for-ipad-chrome",
+      "title": "Update the standalone page (frontend/public/valentine.html) to keep the single-purpose Valentine prompt with “Yes” and an evasive “No” button (moves away on hover/touch), and on “Yes” click reveal: (1) a meme-style cartoon romantic image containing the text “You are my forever, Warda.” and (2) the full love letter content (in English) displayed below the image in a readable, scrollable layout suitable for iPad Chrome.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-react-app-valentine-flow-frontend-src-app-tsx-to-match-the-same-end-user-behavior-as-the-standalone-page-keep-the-evasive-no-behavior-and-after-clicking-yes-show-the-meme-style-cartoon-romantic-image-with-the-embedded-text-you-are-my-forever-warda-plus-the-full-english-love-letter-content-below-the-image-in-a-mobile-tablet-friendly-layout",
+      "title": "Update the React app Valentine flow (frontend/src/App.tsx) to match the same end-user behavior as the standalone page: keep the evasive “No” behavior, and after clicking “Yes” show the meme-style cartoon romantic image with the embedded text “You are my forever, Warda.” plus the full English love letter content below the image in a mobile/tablet-friendly layout.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-cartoonish-romantic-visual-theme-across-both-the-standalone-page-and-the-react-flow-warm-pink-red-palette-playful-rounded-shapes-heart-accents-soft-shadows-and-a-friendly-cartoon-like-typographic-feel-while-keeping-the-ui-simple-and-focused-on-the-single-valentine-question-and-reveal",
+      "title": "Apply a consistent cartoonish romantic visual theme across both the standalone page and the React flow (warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel), while keeping the UI simple and focused on the single Valentine question and reveal.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-meme-style-image-as-a-static-asset-under-frontend-public-assets-generated-and-reference-it-from-both-frontend-public-valentine-html-and-frontend-src-app-tsx-do-not-serve-images-through-the-backend",
+      "title": "Add the generated meme-style image as a static asset under frontend/public/assets/generated and reference it from both frontend/public/valentine.html and frontend/src/App.tsx (do not serve images through the backend).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a simple romantic-themed interactive Valentine web page (HTML/CSS/JS) runnable on iPad Chrome",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add Yes/No options where the No button moves away on hover to prevent clicking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "On Yes click, display a meme/cartoonish romantic image and show the provided love message text (including 'you are my forever warda')",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Apply a cartoonish romantic color scheme/theme across the page",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Cartoonish romantic Valentine page with evasive “No”, “Yes” reveal meme, and love letter",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

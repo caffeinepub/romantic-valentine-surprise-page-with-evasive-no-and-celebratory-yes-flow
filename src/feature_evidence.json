@@ -1,0 +1,79 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-standalone-page-frontend-public-valentine-html-to-keep-the-single-purpose-valentine-prompt-with-yes-and-an-evasive-no-button-moves-away-on-hover-touch-and-on-yes-click-reveal-1-a-meme-style-cartoon-romantic-image-containing-the-text-you-are-my-forever-warda-and-2-the-full-love-letter-content-in-english-displayed-below-the-image-in-a-readable-scrollable-layout-suitable-for-ipad-chrome",
+      "featureTitle": "Update the standalone page (frontend/public/valentine.html) to keep the single-purpose Valentine prompt with “Yes” and an evasive “No” button (moves away on hover/touch), and on “Yes” click reveal: (1) a meme-style cartoon romantic image containing the text “You are my forever, Warda.” and (2) the full love letter content (in English) displayed below the image in a readable, scrollable layout suitable for iPad Chrome.",
+      "files": [
+        "frontend/public/valentine.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-react-app-valentine-flow-frontend-src-app-tsx-to-match-the-same-end-user-behavior-as-the-standalone-page-keep-the-evasive-no-behavior-and-after-clicking-yes-show-the-meme-style-cartoon-romantic-image-with-the-embedded-text-you-are-my-forever-warda-plus-the-full-english-love-letter-content-below-the-image-in-a-mobile-tablet-friendly-layout",
+      "featureTitle": "Update the React app Valentine flow (frontend/src/App.tsx) to match the same end-user behavior as the standalone page: keep the evasive “No” behavior, and after clicking “Yes” show the meme-style cartoon romantic image with the embedded text “You are my forever, Warda.” plus the full English love letter content below the image in a mobile/tablet-friendly layout.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-consistent-cartoonish-romantic-visual-theme-across-both-the-standalone-page-and-the-react-flow-warm-pink-red-palette-playful-rounded-shapes-heart-accents-soft-shadows-and-a-friendly-cartoon-like-typographic-feel-while-keeping-the-ui-simple-and-focused-on-the-single-valentine-question-and-reveal",
+      "featureTitle": "Apply a consistent cartoonish romantic visual theme across both the standalone page and the React flow (warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel), while keeping the UI simple and focused on the single Valentine question and reveal.",
+      "files": [
+        "frontend/public/valentine.html",
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-generated-meme-style-image-as-a-static-asset-under-frontend-public-assets-generated-and-reference-it-from-both-frontend-public-valentine-html-and-frontend-src-app-tsx-do-not-serve-images-through-the-backend",
+      "featureTitle": "Add the generated meme-style image as a static asset under frontend/public/assets/generated and reference it from both frontend/public/valentine.html and frontend/src/App.tsx (do not serve images through the backend).",
+      "files": [
+        "frontend/public/valentine.html",
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

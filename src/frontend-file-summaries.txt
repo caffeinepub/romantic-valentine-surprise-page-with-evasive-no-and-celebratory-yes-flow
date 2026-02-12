@@ -1,0 +1,7 @@
+{
+  "frontend/src/App.tsx": "Main Valentine's page component with evasive \"No\" button that moves on hover/touch, and celebration view showing the meme image with \"You are my forever, Warda\" plus a scrollable love letter with all the romantic text in English.",
+  "frontend/src/index.css": "Global styles with romantic OKLCH color system using warm rose/pink/red palette for light and dark modes, custom animation delays, and Inter font family.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Inter font family and romantic color tokens matching the Valentine's theme.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are needed for this frontend-only application.",
+  "frontend/public/valentine.html": "Standalone single-file HTML version with embedded CSS/JS that reproduces the Valentine's surprise interaction (evasive \"No\" button for mouse and touch, celebration view with meme image and full scrollable love letter) using the static asset at assets/generated/valentine-meme-forever-warda.dim_1600x900.png."
+}

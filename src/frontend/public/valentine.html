@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #ffe4e6 0%, #fce7f3 50%, #fee2e2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            min-height: 600px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 48px;
+            border: 4px solid #fecdd3;
+        }
+
+        .hearts-top {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .heart {
+            color: #f43f5e;
+            font-size: 48px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .heart:nth-child(2) {
+            font-size: 64px;
+            animation-delay: 0.1s;
+        }
+
+        .heart:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        h1 {
+            text-align: center;
+            color: #e11d48;
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 48px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            margin-top: 48px;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .btn {
+            font-size: 24px;
+            padding: 24px 48px;
+            border-radius: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-yes {
+            background: #e11d48;
+            color: white;
+        }
+
+        .btn-yes:hover {
+            background: #be123c;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.4);
+        }
+
+        .btn-no {
+            position: absolute;
+            background: white;
+            color: #e11d48;
+            border: 2px solid #fda4af;
+        }
+
+        .hearts-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+        }
+
+        .heart-small {
+            color: #fb7185;
+            font-size: 24px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        .heart-small:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .heart-small:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .celebration {
+            display: none;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .celebration.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .celebration-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding: 20px;
+            padding-bottom: 80px;
+        }
+
+        .celebration-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 0;
+        }
+
+        .image-box {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 32px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fecdd3;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .love-letter {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 48px;
+            margin-top: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fecdd3;
+            text-align: left;
+        }
+
+        .love-letter h2 {
+            text-align: center;
+            color: #e11d48;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 32px;
+        }
+
+        .love-letter p {
+            color: #881337;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .love-letter p:last-child {
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+            margin-top: 32px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(225, 29, 72, 0.6);
+            background: linear-gradient(to top, rgba(255, 228, 230, 0.9), transparent);
+            backdrop-filter: blur(8px);
+        }
+
+        .footer a {
+            color: rgba(225, 29, 72, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #e11d48;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .btn {
+                font-size: 20px;
+                padding: 20px 40px;
+            }
+
+            .container {
+                padding: 32px 24px;
+            }
+
+            .image-box {
+                padding: 24px;
+            }
+
+            .love-letter {
+                padding: 32px 24px;
+            }
+
+            .love-letter h2 {
+                font-size: 28px;
+            }
+
+            .love-letter p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="question-view">
+            <div class="hearts-top">
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+            </div>
+
+            <h1>Will you be my Valentine, my love?</h1>
+
+            <div class="buttons-container" id="buttons-container">
+                <button class="btn btn-yes" id="yes-btn">Yes</button>
+                <button class="btn btn-no" id="no-btn">No</button>
+            </div>
+
+            <div class="hearts-bottom">
+                <span class="heart-small">❤️</span>
+                <span class="heart-small">❤️</span>
+                <span class="heart-small">❤️</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration-view">
+        <div class="celebration-wrapper">
+            <div class="celebration-container">
+                <div class="hearts-top">
+                    <span class="heart">❤️</span>
+                    <span class="heart">❤️</span>
+                    <span class="heart">❤️</span>
+                </div>
+
+                <div class="image-box">
+                    <img src="assets/generated/valentine-meme-forever-warda.dim_1600x900.png" alt="You are my forever, Warda">
+                </div>
+
+                <div class="love-letter">
+                    <h2>I Love You, Warda</h2>
+                    
+                    <p>
+                        My love, every day with you feels like a gift I don't deserve but am endlessly grateful for. You are my safe place, my biggest blessing, and the reason ordinary moments feel magical. Loving you has taught me patience, joy, and what it truly means to feel at home in another person's heart.
+                    </p>
+                    
+                    <p>
+                        On this Valentine's Day—and every day—I choose you, I cherish you, and I thank the universe for making you my wife. I love you more deeply than words can ever fully say.
+                    </p>
+                    
+                    <p>
+                        When I first saw you, something changed. I seen what true happiness looks like. I also saw my future. And now, every time I look at you, I see my world, my everything, my past present and future. I see everything I want. You are my everything. You are my world.
+                    </p>
+                    
+                    <p>
+                        You are constantly in my mind. You know how to brighten up my day just by saying hi. You are the most amazing girlfriend I could ever want. You've truly made me happier than I thought I could be. I am so in love with you. And the best part is, I fall in love with you more and more every day and with every word you say.
+                    </p>
+                    
+                    <p>
+                        You've helped me do things I never thought I could do. You've helped me be happy. You've helped pick me up. You've helped cheer me up. You've helped show me what love really is. You've helped with so much more too. I could be here for the next week saying everything you've done and helped me. I love you so much. So much more than I could ever explain. So much more than you will ever know.
+                    </p>
+                    
+                    <p>
+                        You actually mean so much to me. I wouldn't trade you for anything. And the fact that we've been together for one year, one FREAKIN month, is actually crazy. I can't wait to spend the rest of my life with you. I know that waking up to you, rolling over, and giving you a kiss every morning will be truly absolutely amazing.
+                    </p>
+                    
+                    <p>
+                        Thank you for everything you have done for me. I still remember that day last year when I said "Will you be my Valentine?" and you said "I need time." And see now, today we are a couple—the best couple, the perfect couple. And today we are husband and wife. So cool, right?
+                    </p>
+                    
+                    <p>
+                        Warda, you are my life, my everything. Without you, I have no one. I'll always be loyal to you—that's my promise to you and to Allah. I only want you, I only love you, and I am only yours. I will always be yours.
+                    </p>
+                    
+                    <p>
+                        I'll forever love you. You are my life. ❤️
+                    </p>
+                </div>
+
+                <div class="hearts-bottom">
+                    <span class="heart-small">❤️</span>
+                    <span class="heart-small">❤️</span>
+                    <span class="heart-small">❤️</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © <span id="year"></span> · Built with ❤️ using 
+        <a href="https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=valentine-app" target="_blank" rel="noopener noreferrer">
+            caffeine.ai
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const yesBtn = document.getElementById('yes-btn');
+        const noBtn = document.getElementById('no-btn');
+        const questionView = document.getElementById('question-view');
+        const celebrationView = document.getElementById('celebration-view');
+        const buttonsContainer = document.getElementById('buttons-container');
+        const container = document.querySelector('.container');
+
+        yesBtn.addEventListener('click', () => {
+            container.style.display = 'none';
+            celebrationView.classList.add('active');
+        });
+
+        function moveNoButton() {
+            const containerRect = buttonsContainer.getBoundingClientRect();
+            const button = noBtn.getBoundingClientRect();
+            const yesButton = yesBtn.getBoundingClientRect();
+
+            const padding = 20;
+            const maxX = Math.max(containerRect.width - button.width - padding, padding);
+            const maxY = Math.max(containerRect.height - button.height - padding, padding);
+
+            let newX, newY;
+            let attempts = 0;
+            const maxAttempts = 50;
+
+            do {
+                newX = Math.random() * (maxX - padding) + padding;
+                newY = Math.random() * (maxY - padding) + padding;
+                attempts++;
+
+                const noLeft = newX;
+                const noRight = newX + button.width;
+                const noTop = newY;
+                const noBottom = newY + button.height;
+
+                const yesLeft = yesButton.left - containerRect.left;
+                const yesRight = yesLeft + yesButton.width;
+                const yesTop = yesButton.top - containerRect.top;
+                const yesBottom = yesTop + yesButton.height;
+
+                const overlap = !(
+                    noRight < yesLeft ||
+                    noLeft > yesRight ||
+                    noBottom < yesTop ||
+                    noTop > yesBottom
+                );
+
+                if (!overlap) break;
+            } while (attempts < maxAttempts);
+
+            noBtn.style.left = newX + 'px';
+            noBtn.style.top = newY + 'px';
+        }
+
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        window.addEventListener('load', () => {
+            const containerRect = buttonsContainer.getBoundingClientRect();
+            const button = noBtn.getBoundingClientRect();
+            const initialX = Math.min(containerRect.width / 2 + 100, containerRect.width - button.width - 20);
+            const initialY = containerRect.height / 2 - button.height / 2;
+            noBtn.style.left = initialX + 'px';
+            noBtn.style.top = initialY + 'px';
+        });
+    </script>
+</body>
+</html>
