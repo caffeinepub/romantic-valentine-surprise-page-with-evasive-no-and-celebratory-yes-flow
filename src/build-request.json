@@ -1,95 +1,126 @@
 {
   "kind": "build_request",
-  "title": "Cartoonish romantic Valentine page with evasive “No”, “Yes” reveal meme, and love letter",
+  "title": "Cartoonish romantic Valentine page with evasive “No” and “Yes” reveal (meme + love letter)",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update the standalone page (frontend/public/valentine.html) to keep the single-purpose Valentine prompt with “Yes” and an evasive “No” button (moves away on hover/touch), and on “Yes” click reveal: (1) a meme-style cartoon romantic image containing the text “You are my forever, Warda.” and (2) the full love letter content (in English) displayed below the image in a readable, scrollable layout suitable for iPad Chrome.",
+      "text": "Update the standalone page at frontend/public/valentine.html to be a simple, romantic-themed, single-purpose Valentine prompt that asks “Will you be my Valentine, my love?” with exactly two options: “Yes” and “No”, optimized for iPad Chrome.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-1"
         ],
         "quotes": [
-          "There should be two options: Yes or No. When she hovers her cursor over No, it should move away so she cannot click it... When she clicks Yes, show her a meme image telling her “you are my forever warda ... and write ... and be fully interactive using HTML, CSS, and JavaScript so that I can easily run it on my iPad using Chrome"
+          "Create an interactive web page as a surprise for my girlfriend. The page should be simple, romantic-themed, and have only one purpose: to ask her to be my Valentine my love . There should be two options: Yes or No. ... and be fully interactive using HTML, CSS, and JavaScript so that I can easily run it on my iPad using Chrome1"
         ]
       },
       "acceptanceCriteria": [
-        "Opening /frontend/public/valentine.html shows the question “Will you be my Valentine, my love?” with Yes/No options.",
-        "Hovering the cursor over “No” moves it to a new position within the button container; on touch devices, touching “No” also moves it and does not trigger navigation/click.",
-        "Clicking “Yes” hides the question view and shows a celebration view that includes: (a) a meme/cartoon romantic image with the embedded text “You are my forever, Warda.” and (b) the provided love letter text rendered as selectable text, laid out for comfortable reading (wrapping, spacing, and scroll if needed).",
-        "All content in the celebration view is in English (no non-English text displayed)."
+        "Opening /public/valentine.html shows a single Valentine question with only two buttons: Yes and No.",
+        "Layout is readable and usable on tablet-sized screens (iPad) without horizontal scrolling.",
+        "All user-visible copy in this page is in English."
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Update the React app Valentine flow (frontend/src/App.tsx) to match the same end-user behavior as the standalone page: keep the evasive “No” behavior, and after clicking “Yes” show the meme-style cartoon romantic image with the embedded text “You are my forever, Warda.” plus the full English love letter content below the image in a mobile/tablet-friendly layout.",
+      "text": "Implement the evasive “No” behavior on the standalone page (frontend/public/valentine.html): when the user hovers over or touches the “No” button, it moves to a new random position within its container so it cannot be clicked, while ensuring it does not overlap the “Yes” button.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-1"
         ],
         "quotes": [
-          "When she clicks Yes, show her a meme image telling her “you are my forever warda ... and write ..."
+          "When she hovers her cursor over No, it should move away so she cannot click it, forcing her to click only on Yes."
         ]
       },
       "acceptanceCriteria": [
-        "In the React app, the initial view shows the Valentine question with Yes/No, and “No” moves away on hover and on touch/pointer interactions.",
-        "After clicking “Yes”, the celebration view shows the meme/cartoon romantic image with embedded text “You are my forever, Warda.” and renders the English love letter text beneath it with appropriate spacing and readability on iPad-sized viewports.",
-        "The celebration view supports scrolling if the love letter is longer than the viewport, without content overlap with the footer."
+        "On desktop: moving the cursor over the No button causes it to jump to a different position.",
+        "On touch devices (iPad): attempting to press the No button causes it to move away (preventing a click).",
+        "No button stays within the visible bounds of its button area and does not overlap the Yes button.",
+        "The No button cannot be reliably clicked through normal interaction."
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Apply a consistent cartoonish romantic visual theme across both the standalone page and the React flow (warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel), while keeping the UI simple and focused on the single Valentine question and reveal.",
+      "text": "On “Yes” click, show a celebration/reveal view (in both frontend/public/valentine.html and frontend/src/App.tsx) that displays: (1) the meme-style image with embedded text “You are my forever, Warda.” and (2) the full love letter message content provided by the user, formatted as readable paragraphs in a scrollable layout suitable for iPad Chrome.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-1"
+        ],
+        "quotes": [
+          "When she clicks Yes, show her a meme image telling her “you are my forever warda ... and write i love you warda ill forever love you , you are my life and i would like to say My love, every day with you feels like a gift..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking Yes hides the question view and shows the reveal view.",
+        "Reveal view includes the meme image and the full love letter text (as paragraph blocks) and is readable on iPad (comfortable font size/line height).",
+        "Reveal view content is vertically scrollable so long text is accessible.",
+        "The same end-user behavior exists in the React app (frontend/src/App.tsx) and the standalone page (frontend/public/valentine.html)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a consistent cartoonish romantic visual theme across both the standalone page (frontend/public/valentine.html) and the React flow (frontend/src/App.tsx): warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel, while keeping the UI simple and focused on the single Valentine question and reveal.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
         ],
         "quotes": [
           "thia page should be cartonish themed romantically scheme"
         ]
       },
       "acceptanceCriteria": [
-        "Both experiences (standalone HTML and React) share a cohesive romantic cartoon theme (rounded panels, warm gradients, heart accents, soft shadows).",
-        "Typography and spacing make the question and the love letter easy to read on iPad Chrome (no overly small text, no clipped content)."
+        "Both flows (standalone HTML page and React app) share a coherent cartoonish-romantic styling approach (colors, rounded shapes, heart accents, soft shadows).",
+        "Theme does not introduce extra features beyond the Valentine prompt and the reveal view.",
+        "Typography and spacing remain readable on mobile/tablet."
       ]
     },
     {
-      "id": "REQ-4",
-      "text": "Add the generated meme-style image as a static asset under frontend/public/assets/generated and reference it from both frontend/public/valentine.html and frontend/src/App.tsx (do not serve images through the backend).",
+      "id": "REQ-5",
+      "text": "Add the meme-style image as a static asset under frontend/public/assets/generated and reference it from both frontend/public/valentine.html and frontend/src/App.tsx using the exact filename valentine-meme-forever-warda.dim_1600x900.png (do not serve images through the backend).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-1"
         ],
         "quotes": [
-          "show her a meme image telling her “you are my forever warda”"
+          "When she clicks Yes, show her a meme image telling her “you are my forever warda"
         ]
       },
       "acceptanceCriteria": [
-        "A new image file exists at frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png.",
-        "Both the standalone page and React celebration view load and display this new image successfully in production builds.",
+        "The file frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png exists and is loadable in the browser.",
+        "frontend/public/valentine.html references the image via a relative path that works when opening the file via the app’s static hosting.",
+        "frontend/src/App.tsx references the image at /assets/generated/valentine-meme-forever-warda.dim_1600x900.png.",
         "No backend endpoints are added for image delivery."
       ]
     }
   ],
   "constraints": [
-    "Frontend paths listed as immutable must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
-    "Backend must remain single-actor; no new backend services or external databases.",
-    "Use English for all user-facing text rendered in the app/page."
+    "Do not edit any files under frontend/src/components/ui (compose them only).",
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, or frontend/src/main.tsx (immutable paths).",
+    "Keep all backend logic within the single Motoko actor in backend/main.mo (no additional backend services)."
   ],
   "nonGoals": [
-    "Adding authentication (Internet Identity) or any backend persistence.",
-    "Adding additional pages/features beyond the Valentine question and the Yes reveal.",
-    "Implementing real-time communication, messaging, or social integrations."
+    "Adding user accounts, saving responses, analytics, or any server-side persistence.",
+    "Adding additional pages or flows beyond the Valentine question and the Yes-reveal.",
+    "Integrating third-party auth providers (only Internet Identity is available, and it is not required for this page)."
   ],
   "imageRequirements": {
     "required": [
-      "Meme-style cartoon romantic illustration with a couple, hearts/sparkles, warm pink/red palette, playful vector-like outlines, and the embedded text “You are my forever, Warda.” (valentine-meme-forever-warda.dim_1600x900.png)"
+      "Meme-style cartoon romantic illustration with a couple, hearts/sparkles, warm pink/red palette, playful vector-like outlines, and embedded text “You are my forever, Warda.” (valentine-meme-forever-warda.dim_1600x900.png)"
     ],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

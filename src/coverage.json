@@ -1,54 +1,56 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-12T21:33:53.690Z",
+  "generatedAt": "2026-02-12T21:43:00.699Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 4,
-    "implemented": 4,
+    "total": 5,
+    "implemented": 1,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update the standalone page (frontend/public/valentine.html) to keep the single-purpose Valentine prompt with “Yes” and an evasive “No” button (moves away on hover/touch), and on “Yes” click reveal: (1) a meme-style cartoon romantic image containing the text “You are my forever, Warda.” and (2) the full love letter content (in English) displayed below the image in a readable, scrollable layout suitable for iPad Chrome.",
-        "status": "implemented",
+        "summary": "Update the standalone page at frontend/public/valentine.html to be a simple, romantic-themed, single-purpose Valentine prompt that asks “Will you be my Valentine, my love?” with exactly two options: “Yes” and “No”, optimized for iPad Chrome.",
+        "status": "missing",
         "plannedFiles": [
           "frontend/public/valentine.html"
         ],
-        "matchedFiles": [
-          "frontend/public/valentine.html"
-        ]
+        "matchedFiles": []
       },
       {
         "id": "REQ-2",
-        "summary": "Update the React app Valentine flow (frontend/src/App.tsx) to match the same end-user behavior as the standalone page: keep the evasive “No” behavior, and after clicking “Yes” show the meme-style cartoon romantic image with the embedded text “You are my forever, Warda.” plus the full English love letter content below the image in a mobile/tablet-friendly layout.",
-        "status": "implemented",
+        "summary": "Implement the evasive “No” behavior on the standalone page (frontend/public/valentine.html): when the user hovers over or touches the “No” button, it moves to a new random position within its container so it cannot be clicked, while ensuring it does not overlap the “Yes” button.",
+        "status": "missing",
         "plannedFiles": [
-          "frontend/src/App.tsx"
+          "frontend/public/valentine.html"
         ],
-        "matchedFiles": [
-          "frontend/src/App.tsx"
-        ]
+        "matchedFiles": []
       },
       {
         "id": "REQ-3",
-        "summary": "Apply a consistent cartoonish romantic visual theme across both the standalone page and the React flow (warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel), while keeping the UI simple and focused on the single Valentine question and reveal.",
-        "status": "implemented",
+        "summary": "On “Yes” click, show a celebration/reveal view (in both frontend/public/valentine.html and frontend/src/App.tsx) that displays: (1) the meme-style image with embedded text “You are my forever, Warda.” and (2) the full love letter message content provided by the user, formatted as readable paragraphs in a scrollable layout suitable for iPad Chrome.",
+        "status": "missing",
         "plannedFiles": [
           "frontend/public/valentine.html",
-          "frontend/src/App.tsx",
-          "frontend/src/index.css"
-        ],
-        "matchedFiles": [
-          "frontend/public/valentine.html",
           "frontend/src/App.tsx"
-        ]
+        ],
+        "matchedFiles": []
       },
       {
         "id": "REQ-4",
-        "summary": "Add the generated meme-style image as a static asset under frontend/public/assets/generated and reference it from both frontend/public/valentine.html and frontend/src/App.tsx (do not serve images through the backend).",
+        "summary": "Apply a consistent cartoonish romantic visual theme across both the standalone page (frontend/public/valentine.html) and the React flow (frontend/src/App.tsx): warm pink/red palette, playful rounded shapes, heart accents, soft shadows, and a friendly cartoon-like typographic feel, while keeping the UI simple and focused on the single Valentine question and reveal.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/public/valentine.html",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Add the meme-style image as a static asset under frontend/public/assets/generated and reference it from both frontend/public/valentine.html and frontend/src/App.tsx using the exact filename valentine-meme-forever-warda.dim_1600x900.png (do not serve images through the backend).",
         "status": "implemented",
         "plannedFiles": [
           "frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png",
@@ -56,9 +58,7 @@
           "frontend/src/App.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png",
-          "frontend/public/valentine.html",
-          "frontend/src/App.tsx"
+          "frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png"
         ]
       }
     ]
@@ -66,11 +66,8 @@
   "changedFiles": [
     "build-request.json",
     "feature_evidence.json",
-    "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/public/assets/generated/valentine-meme-forever-warda.dim_1600x900.png",
-    "frontend/public/valentine.html",
-    "frontend/src/App.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
